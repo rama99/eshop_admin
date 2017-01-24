@@ -1,0 +1,13 @@
+
+
+<form class="form-signin" [formGroup]="formGroup" (ngSubmit)="onSignIn(formGroup.value)">
+	<h2 class="form-signin-heading">Please sign in</h2>
+	<div *ngIf="errorMessage" class="alert alert-warning">
+ 	{{errorMessage}}
+	</div>
+	<label for="login" class="sr-only">User Name</label>	
+	<input #userName type="text"  id="login" placeholder="User Name" class="form-control" maxlength="25" formControlName="userName">
+	<label for="password" class="sr-only">User Name</label>	
+	<input type="password" maxlength="25" placeholder="Password" id="password" class="form-control" formControlName="password"><br>
+	<input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign in">
+</form>

@@ -1,0 +1,20 @@
+<nav class="navbar navbar-inverse" *ngIf="blnDisplayMenu">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="['']" routerLinkActive="active" > <img height="35px" src="/app/images/template/eshop.png" /></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a [routerLink]="['']">Home</a></li>      
+
+      <li><a [routerLink]="['./categories']" routerLinkActive="active">Categories</a></li>
+      <li><a [routerLink]="['./products']" routerLinkActive="active">Products</a></li>
+      
+      <li><a [routerLink]="['./about']" routerLinkActive="active">About</a></li>
+      <li><a [routerLink]="['./logout']" routerLinkActive="active">Logout</a></li>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+    </ul>      
+
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

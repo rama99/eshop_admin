@@ -1,0 +1,12 @@
+<select #category class="form-control" (change)="onCategoryChange($event.target.value)">
+
+    <option value="">Select a Category</option>
+    <option [value]="category.id" *ngFor="let category of categories">
+                {{category.name}}
+    </option>    
+</select>
+<br>
+<div [ngClass]="{well: odd}" *ngFor="let product of products;let odd =  odd">    
+        <h4><strong>{{product.name}}</strong>&nbsp;[ Price:  {{product.price | currency}} ]</h4>       
+        <img [src]="'app/images/product/'+ product.imageurl"  height="160" width="160"/>
+</div>

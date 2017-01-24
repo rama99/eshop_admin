@@ -1,0 +1,17 @@
+<div class="col-md-4">
+<ul>
+    <li *ngFor="let category of categories">
+       <a href="javascript:void(0)" (click)="categoryDetails(category)"> {{category.name}} </a>
+    </li>
+</ul>
+</div>
+<br><br>
+<div class="col-md-8" *ngIf="details?.name">
+    <div>  
+        <img [src]="'/app/images/category/' + details.image_url" width="300px" height="170px"/><br>
+        <h4><label>{{details.name}}</label></h4>
+        <h4><label>{{details.description}}</label></h4>
+    </div>
+</div>
+
+

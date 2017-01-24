@@ -1,0 +1,33 @@
+<h2> Add product </h2>
+
+<form [formGroup]="formGroup" (ngSubmit)="onAddProduct()">
+    <div class="alert alert-danger" *ngIf="errorMessage">
+    {{errorMessage}}
+    </div>
+    <div>
+        <label>Name</label>
+        <input #name type="text" formControlName="name" placeholder="Name" class="form-control">
+    </div>
+    <div>
+        <label>Category</label>
+        <select formControlName="category_id" class="form-control">
+            <option value="">Select a Category</option>
+            <option [value]="category.id" *ngFor="let category of categories">
+                {{category.name}}
+            </option>
+        </select>
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea formControlName="description" placeholder="Description" class="form-control"></textarea>
+    </div>
+    <div>
+        <label>Price</label>
+        <input type="text" formControlName="price" placeholder="Price" class="form-control"/>
+    </div>
+    <div>
+        <label>Image Url</label>
+        <input type="text" formControlName="imageUrl" placeholder="Image Url" class="form-control"/>
+    </div>
+    <input type="submit" value="Add Product" class="btn btn-primary"/>
+</form>
